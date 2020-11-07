@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { navigate } from "gatsby";
 import gql from 'graphql-tag';
-import React, { useRef, useState } from "react"
+import React, { useRef, useState,useEffect } from "react"
 import ReactDOM from 'react-dom'
 //import Lolly from '../svgs/lolly-image.svg'
 import Header from '../components/Header'
@@ -53,6 +53,17 @@ export default function NewLolly() {
         })
         console.log("result = ",result.data.createLolly);
         navigate(`/showLolly?id=${result.data.createLolly.lollyPath}`);
+
+        useEffect(() => {
+            async function runHook() {
+                const response = await fetch("https://api.netlify.com/build_hooks/5fa73211f2e549030b792c77", {
+                    method: "POST",
+                });
+    
+            }
+            runHook();
+    
+        }, [data])
 
     }
   return (
