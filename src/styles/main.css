@@ -87,7 +87,7 @@ body {
     height: 40px;
 }
 
-.recipient, .message, .from {
+.recipient,  .from {
     margin-top: 1em;
     margin-bottom: 1em;
     font-family: Yellowtail,cursive;
