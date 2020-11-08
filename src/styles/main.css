@@ -296,7 +296,7 @@ body {
     letter-spacing: 2px;
     font-style: italic;
   }
-  .result > h3 {
+  .result  h3 {
     color: #fa73d9;
     margin-top: 0.5em;
     padding: 0.5em 1em;
@@ -305,6 +305,8 @@ body {
     text-align: center;
     letter-spacing: 2px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    font-size: 15px !important;
+    text-align: center;
   }
   .result__details {
     padding: 1em 2em;
@@ -334,7 +336,11 @@ body {
     border: 2px solid #fa73d9 ; 
     padding: 20px;
     margin-left: 50px;
+    box-shadow: 0 0 6px #fa73d9;
+
   }
   h1{
-      font-size: 15px;
+      font-size: 18px;
+      font-weight: bolder;
+      text-align: center;
   }
