@@ -29,13 +29,13 @@ body {
 }
 
 .first .lollyTop {
-    fill: red;
+    fill: lightgreen;
 }
 .first .lollyMiddle {
-    fill: green;
+    fill: yellow;
 }
 .first .lollyBottom {
-    fill: blue;
+    fill: pink;
 }
 
 .second .lollyTop {
