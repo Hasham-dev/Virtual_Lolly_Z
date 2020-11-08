@@ -36,22 +36,22 @@ export default function ShowLolly({location}) {
       {loading && <p>Loading Client Side Querry...</p>}
       {error && <p>Error: ${error.message}</p>}
       {data && data.getLolly && 
-      <div className="newLollyForm">
+      <div className="newLollyForm1">
         <div>
             <Lolly lollyTopFill={data.getLolly.flavourTop} lollyMiddleFill={data.getLolly.flavourMiddle} lollyBottomFill={data.getLolly.flavourBottom} />
         </div>
-        <div>
-            <div className="details" style={{textAlign:"left", border: "2px solid red", marginLeft:"30px"}}>
-                <p>Your lolly is freezing. Share it with this link:</p>
-                <pre>{location.origin}/showLolly/{data.getLolly.lollyPath}</pre>
-                <div style={{height: "200px"}}>
-                    <div id="recipient" className="recipient">
+        <div className="result">
+            <div className="details" >
+                <h1>Your lolly is freezing. Share it with this link:</h1>
+                <h3>{location.origin}/showLolly/{data.getLolly.lollyPath}</h3>
+                <div className="result__details">
+                    <div id="recipient" className="reciever">
                         {data.getLolly.recipientName}
                     </div>
                     <div id="message" className="message">
                         {data.getLolly.message}
                     </div>
-                    <div id="from" className="from">
+                    <div id="from" className="sender">
                         {data.getLolly.senderName}
                     </div>
                 </div>

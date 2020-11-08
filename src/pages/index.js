@@ -8,11 +8,14 @@ export default function Home() {
   return (
     <div className="container">
       <Header/>
-      <div className="homeLollyList">
+      <div className="banner">
         <div className="first"><Lolly /></div>
         <div className="second"><Lolly /></div>
-        <div className="third"><Lolly /></div>
+        <div className="third"><Lolly lollyTopFill="green" lollyMiddleFill="blue" lollyBottomFill="lightBlue  " /></div>
         <div className="forth"><Lolly lollyTopFill="yellow" lollyMiddleFill="gray" lollyBottomFill="purple" /></div>
+        <div className="fifth"><Lolly /></div>
+        <div className="sixth"><Lolly /></div>
+
         {
           /*
           <div className="first"><Lolly /></div>
@@ -26,7 +29,7 @@ export default function Home() {
       <div>
         <button onClick={()=>{
           navigate("/createNew")
-        }} >Make a new lolly</button>
+        }} >Make a new lolly to send to a friend</button>
       </div>
     </div>
     

@@ -16,8 +16,16 @@ body {
     flex-direction: row;
 }
 
-.homeLollyList .lollipop {
-    height: 300px;
+.banner .lollipop {
+    height: 240px;
+}
+.newLollyForm .lollipop{
+    height: 300;
+
+}
+.newLollyForm1 .lollipop{
+    height: 200;
+
 }
 
 .first .lollyTop {
@@ -40,11 +48,31 @@ body {
     fill: #FFEE99;
 }
 
-.newLollyForm {
+.fifth .lollyTop {
+    fill:lightcoral;
+}
+.fifth .lollyMiddle {
+    fill: lightskyblue;
+}
+.fifth .lollyBottom {
+    fill: yellow;
+}
+.sixth .lollyTop {
+    fill:lightseagreen;
+}
+.sixth .lollyMiddle {
+    fill: whitesmoke;
+}
+.sixth .lollyBottom {
+    fill: lightsalmon;
+}
+.newLollyForm,.newLollyForm1 {
     display: flex;
     flex-direction: row; 
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    
+    
 }
 
 .flavours {
@@ -68,3 +96,245 @@ body {
 .from {
     margin-left: 50px;
 }
+.banner {
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  
+  @media (max-width: 425px) {
+    .banner {
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+  }
+  button {
+    margin-top: 1em;
+    box-shadow: 0 0 6px #fa73d9;
+    border: 2px solid #fa73d9;
+    background-color: transparent;
+    font-size: 0.9em;
+    color: #fa73d9;
+    padding: 1em 2em;
+    border-radius: 4em;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 1rem auto;
+    display: block;
+    outline: none;
+  }
+  button:hover {
+    background-color: #fa73d9;
+    color: #21212b;
+  }
+  @media (max-width: 425px) {
+    button {
+      margin-top: -4rem;
+    }
+  }
+  .lollyFlavourDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .NewLolly {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+  }
+  .lollyFormDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5rem;
+  }
+  .colorPickerLabel {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .colorPicker {
+    width: 80px;
+    height: 80px;
+    margin-top: -10px;
+    margin-left: -10px;
+    padding-bottom: 40px;
+  }
+  .form-container {
+    padding: 1em 2em;
+    margin-bottom: 1.5em;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    text-align: left;
+    font-style: italic;
+    font-size: 1.1em;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  label {
+    color: #fff;
+  }
+  .error {
+    color: red;
+  }
+  .form-container > input,
+  textarea {
+    font-size: 0.9em;
+    width: 100%;
+    padding: 0.5em 0.3em;
+    margin: 0 -0.2em;
+    border: 1px solid #fa73d9;
+    color: #fff;
+    background-color: #222;
+    box-shadow: 0 0 6px #fa73d9;
+  }
+  #recipientName,#senderName{
+    font-size: 0.9em;
+    width: 100%;
+    padding: 0.5em 0.3em;
+    margin: 0 -0.2em;
+    border: 1px solid #fa73d9;
+    color: #fff;
+    background-color: #222;
+    box-shadow: 0 0 6px #fa73d9;
+  }
+  input[type=text]{
+    font-size: 0.9em;
+    width: 100%;
+    padding: 0.5em 0.3em;
+    margin: 0 -0.2em;
+    border: 1px solid #fa73d9;
+    color: #fff;
+    background-color: #222 !important;
+    box-shadow: 0 0 6px #fa73d9;
+  }
+  .space-mob {
+    display: none;
+  }
+  @media (max-width: 425px) {
+    .lollyFlavourDiv {
+      display: flex;
+      flex-direction: row;
+      /* justify-content: center; */
+    }
+    .lollyFormDiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      /* margin-top: 5rem; */
+    }
+    .form-container {
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+    }
+    .create {
+      width: 100%;
+    }
+    .space-mob {
+      height: 6rem;
+      display: inline-block;
+    }
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #21212b;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__heading {
+  font-weight: 300;
+  color: #fff;
+  border-bottom-style: none;
+  text-shadow: #fa73d9 0 0 8px;
+  font-size: 4.5em;
+  font-family: Yellowtail, cursive;
+  line-height: 1;
+  text-align: center;
+
+  margin-bottom: 0.2em;
+}
+.header__subheading {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #ddd;
+  text-align: center;
+  text-shadow: #fa73d9 1px 1px 4px;
+  margin-top: 1.5em;
+  margin-bottom: 3em;
+  line-height: 1.2;
+}
+@media (max-width: 425px) {
+  .header__subheading {
+    margin-bottom: -3em;
+  }
+}
+.Lol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result {
+    color: #fff;
+  }
+  .result > h4 {
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-style: italic;
+  }
+  .result > h3 {
+    color: #fa73d9;
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+    border: 1px solid #000;
+    background-color: #000;
+    text-align: center;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  }
+  .result__details {
+    padding: 1em 2em;
+    margin-bottom: 1.5em;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    text-align: left;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #fff;
+  }
+  .reciever {
+    font-family: Yellowtail, cursive;
+    font-size: 1.6em;
+    font-style: normal;
+    text-shadow: #000 0 0 10px;
+  }
+  .sender {
+    font-family: Yellowtail, cursive;
+    font-size: 1.6em;
+    font-style: normal;
+    text-shadow: #000 0 0 10px;
+    text-align: center;
+  }
+  .details{
+    text-align: left; 
+    border: 2px solid #fa73d9 ; 
+    padding: 20px;
+    margin-left: 50px;
+  }
+  h1{
+      font-size: 15px;
+  }

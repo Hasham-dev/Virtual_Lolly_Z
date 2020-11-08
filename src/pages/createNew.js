@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { navigate } from "gatsby";
 import gql from 'graphql-tag';
-import React, { useRef, useState,useEffect } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import ReactDOM from 'react-dom'
 //import Lolly from '../svgs/lolly-image.svg'
 import Header from '../components/Header'
@@ -38,73 +38,85 @@ export default function NewLolly() {
     const senderNameRef = useRef();
     //const {loading,error, data} = useQuery(GET_LOLLY);
     //console.log(data);
-    const [createLolly, {data}] = useMutation(createLollyMutation);
+    const [createLolly, { data }] = useMutation(createLollyMutation);
     const createLollySubmit = async () => {
         console.log("recipientNameRef = ", recipientNameRef.current.value);
         const result = await createLolly({
             variables: {
-                recipientName : recipientNameRef.current.value,
-                message :messageRef.current.value,
+                recipientName: recipientNameRef.current.value,
+                message: messageRef.current.value,
                 senderName: senderNameRef.current.value,
                 flavourTop: color1,
                 flavourMiddle: color2,
                 flavourBottom: color3
             }
         })
-        console.log("result = ",result.data.createLolly);
+        console.log("result = ", result.data.createLolly);
         navigate(`/showLolly?id=${result.data.createLolly.lollyPath}`);
 
-        
+
     }
-            useEffect(() => {
-                async function runHook() {
-                    const response = await fetch("https://api.netlify.com/build_hooks/5fa73211f2e549030b792c77", {
-                        method: "POST",
-                    });
-        
-                }
-                runHook();
-        
-            }, [data])
-  return (
-      
-    <div className="container">
-      <Header/>
-      <div className="newLollyForm">
-        <div >
-            <Lolly lollyTopFill={color1} lollyMiddleFill={color2} lollyBottomFill={color3} />
-        </div>
-        <div className="flavours">
-            <input type="color" className="colorPicker" name="flavourTop" id="flavourTop" value={color1} 
-                onChange={(e)=>{
-                    setColor1(e.target.value);
-                }}/>
-            <input onChange={(e)=>{
-                    setColor2(e.target.value)
-                }} type="color" className="colorPicker" name="flavourMiddle" id="flavourMiddle" value={color2}/>
-            <input onChange={(e)=>{
-                    setColor3(e.target.value)
-                }} type="color" className="colorPicker" name="flavourBottom" id="flavourBottom" value={color3}/>
-        </div>
-        <div>
-            <div className="details" style={{textAlign:"left"}}>
-                <div style={{margin:"20px"}}>
-                    <label htmlFor="recipientName" style={{display:"block", }}>To</label>
-                    <input name="recipientName" id="recipientName" ref={recipientNameRef} />
+    useEffect(() => {
+        async function runHook() {
+            const response = await fetch("https://api.netlify.com/build_hooks/5fa73211f2e549030b792c77", {
+                method: "POST",
+            });
+
+        }
+        runHook();
+
+    }, [data])
+    return (
+
+        <div className="container">
+            <Header />
+            <div className="newLollyForm">
+                <div className="Lol">
+                    <Lolly lollyTopFill={color1} lollyMiddleFill={color2} lollyBottomFill={color3} />
                 </div>
-                <div style={{margin:"20px"}}>
-                    <label htmlFor="message" style={{display:"block", }}>Message</label>
-                    <textarea cols="30" rows="10" name="message" id="message" ref={messageRef} />
+                <div className="lollyFlavourDiv">
+                    <label htmlFor="flavourTop" className="colorPickerLabel">
+                        <input type="color" value={color1} className="colorPicker" name="flavourTop" id="flavourTop"
+                            onChange={(e) => {
+                                setColor1(e.target.value);
+                            }}
+                        />
+                    </label>
+                    <label htmlFor="flavourTop" className="colorPickerLabel">
+                        <input type="color" value={color2} className="colorPicker" name="flavourTop" id="flavourTop"
+                            onChange={(e) => {
+                                setColor2(e.target.value);
+                            }}
+                        />
+                    </label>
+                    <label htmlFor="flavourTop" className="colorPickerLabel">
+                        <input type="color" value={color3} className="colorPicker" name="flavourTop" id="flavourTop"
+                            onChange={(e) => {
+                                setColor3(e.target.value);
+                            }}
+                        />
+                    </label>
+
                 </div>
-                <div style={{margin:"20px"}}>
-                    <label htmlFor="senderName" style={{display:"block", }}>From</label>
-                    <input name="senderName" id="senderName" ref={senderNameRef} />
+                <div >
+                    <div className="form-container">
+                        <div style={{ margin: "20px" }}>
+                            <label htmlFor="recipientName" style={{ display: "block", }}>To</label>
+                            <input name="recipientName" id="recipientName" ref={recipientNameRef} />
+                        </div>
+                        <div style={{ margin: "20px" }}>
+                            <label htmlFor="message" style={{ display: "block", }}>Say something nice</label>
+                            <textarea cols="30" rows="10" name="message" id="message" ref={messageRef} />
+                        </div>
+                        <div style={{ margin: "20px" }}>
+                            <label htmlFor="senderName" style={{ display: "block", }}>From</label>
+                            <input name="senderName" id="senderName" ref={senderNameRef} />
+                        </div>
+                    </div>
+                <button onClick={createLollySubmit}>Freeze this lolly & get the Link</button>
                 </div>
             </div>
-            <input type="button"  value="Create" onClick={createLollySubmit}/>
         </div>
-      </div>
-    </div>
-    
-  )
+
+    )
 }
